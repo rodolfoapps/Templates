@@ -18,7 +18,7 @@ export function Hero() {
       {/* Desktop photo + gradients */}
       <div aria-hidden className="absolute inset-0 hidden overflow-hidden md:block">
         {/* Layer is wider than the viewport and anchored right, so the subject lands at ~52% */}
-        <div className="absolute inset-y-0 right-0 left-[-27%] 2xl:left-[-18%]">
+        <div className="absolute inset-y-0 right-0 left-[-27%] 2xl:left-auto 2xl:w-[1900px]">
           <Image src="/images/hero.webp" alt="" fill priority sizes="140vw"  className="object-cover object-[50%_10%]" />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#121315_0%,#121315_18%,rgba(18,19,21,0.85)_30%,rgba(18,19,21,0.05)_44%,rgba(18,19,21,0.05)_100%)]" />
