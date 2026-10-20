@@ -12,7 +12,8 @@ A paid-search landing page for Dr. Steven Mobley's facelift practice, built on t
 | Message match, one goal | Headline for facelift intent; no site navigation; every CTA leads to the same consult form or the phone |
 | Proof in the first screen | Double board certification, University of Utah role, AAAASF facility, Castle Connolly, 50+ works, 85+ lectures, plus a real before/after pair |
 | High-consideration offer: let prospects choose channel | Form asks "best way to reach you": call, text or email. Mobile is form-first with call secondary (`mobilePrimaryCta` in `site.config.ts`) |
-| Real visual proof | Six unretouched before/after composites from the Mobley MD gallery, portrait, surgical suite and team photos. No stock, no generated images |
+| Real visual proof | Drag-to-compare before/after slider plus three unretouched composites from the Mobley MD gallery, Dr. Mobley's portrait, surgical suite and team photos |
+| Hero photograph | The hero model image is AI-generated (Kling) as a stand-in for licensed lifestyle photography. She is not a patient and must not be presented as one. Before launch either replace with a licensed or in-house photo, or keep it and follow current disclosure rules for synthetic imagery in advertising |
 | Plain-language, mid-length copy | Rewritten from the current page at roughly a 7th-grade level, about 900 words including FAQ |
 | Objection handling | "Facelift at a glance" table (technique, where, anesthesia, recovery, cost from $23,000, CareCredit) and an 8-question FAQ, each 2–4 sentences |
 | Sticky mobile CTA | Call \| Request consultation bar after the hero scrolls away |
@@ -60,6 +61,7 @@ Not used on purpose: a numeric Google rating and review count. The site does not
 
 ## Before going live
 
+0. Decide on the hero image: replace the generated model photo with licensed or practice photography, or keep it with appropriate synthetic-image disclosure.
 1. Set `LEAD_WEBHOOK_URL` on the Vercel project (CRM, Zapier, or the practice's intake tool). Until then leads are logged only.
 2. Replace the honeypot-only spam check with reCAPTCHA or Turnstile if spam appears.
 3. Add the Google Ads conversion tag on `/thank-you` and call tracking on the phone number. Medical pages: get HIPAA-aware guidance before adding analytics pixels.
