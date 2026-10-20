@@ -3,7 +3,9 @@ import { siteConfig } from "@/site.config";
 import { Btn } from "@/components/Btn";
 import { Dtr } from "@/components/Dtr";
 import { LeadForm } from "@/components/LeadForm";
-import { PhoneIcon, StarIcon } from "@/components/Icons";
+import { AcademicIcon, ClinicIcon, PhoneIcon, ShieldCheckIcon, StarIcon } from "@/components/Icons";
+
+const credentialIcons = { shield: ShieldCheckIcon, academic: AcademicIcon, clinic: ClinicIcon } as const;
 
 /**
  * Full-bleed hero, everything above the fold on desktop: headline and proof
@@ -50,13 +52,21 @@ export function Hero() {
             <Btn href={phoneHref} variant="outline-light" className="w-full"><PhoneIcon className="size-4" />Call</Btn>
           </div>
 
-          <ul className="mt-8 grid gap-x-6 gap-y-4 border-t border-white/10 pt-6 sm:grid-cols-3 md:max-w-[520px]">
-            {hero.bullets.map((b, i) => (
-              <li key={b} className="text-[12.5px] leading-snug text-white/65">
-                <span className="eyebrow mb-1.5 block text-[10px] text-accent/90">0{i + 1}</span>
-                {b}
-              </li>
-            ))}
+          <ul className="mt-8 grid gap-5 border-t border-white/10 pt-6 sm:grid-cols-3 sm:gap-4 md:max-w-[560px]">
+            {hero.credentials.map((c) => {
+              const Icon = credentialIcons[c.icon];
+              return (
+                <li key={c.title} className="flex gap-3 sm:block">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-accent/40 text-accent">
+                    <Icon className="size-5" />
+                  </span>
+                  <div className="sm:mt-3">
+                    <h3 className="font-display text-[13px] font-medium leading-snug text-white">{c.title}</h3>
+                    <p className="mt-1 text-[12px] leading-snug text-white/60">{c.text}</p>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
 
           <p className="mt-7 hidden text-sm text-white/55 md:block">

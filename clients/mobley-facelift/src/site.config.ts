@@ -33,10 +33,10 @@ export const siteConfig = {
     mobileTitle: "A facelift that looks like you.",
     subtitle:
       "Dr. Steven Mobley is a double board-certified facial plastic surgeon who has performed facelifts in Salt Lake City since 2002. His deep plane technique lifts the muscle layer beneath the skin, so the result is natural, not “windblown.”",
-    bullets: [
-      "Double board-certified: facial plastic surgery (2005) and otolaryngology–head and neck surgery (2002)",
-      "Former Associate Professor of Surgery and Director of Facial Plastic Surgery, University of Utah",
-      "Surgery in his own AAAASF-accredited facility, Millcreek Surgical Suite",
+    credentials: [
+      { icon: "shield", title: "Double board-certified", text: "Facial plastic surgery (2005) and otolaryngology–head & neck surgery (2002)" },
+      { icon: "academic", title: "Professor of Surgery", text: "Former Associate Professor and Director of Facial Plastic Surgery, U of Utah" },
+      { icon: "clinic", title: "Own surgical suite", text: "Millcreek Surgical Suite, AAAASF-accredited, where he is Medical Director" },
     ],
     proofLine: "Castle Connolly Top Doctor · 50+ published works · 85+ surgeon lectures",
   },
