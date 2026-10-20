@@ -28,6 +28,7 @@ pnpm check                               # lint + typecheck + build everything
 | SaaS Landing | `tpl-saas-landing` | https://tpl-saas-landing-indol.vercel.app |
 | Local Business | `tpl-local-business` | https://tpl-local-business.vercel.app |
 | Portfolio | `tpl-portfolio` | https://tpl-portfolio-beige.vercel.app |
+| PPC Lead-Gen Lander | `tpl-ppc-lead-gen` | https://tpl-ppc-lead-gen.vercel.app |
 | Gallery | `gallery` | https://templates-gallery-eight.vercel.app |
 
 ## How a template is built
@@ -85,6 +86,7 @@ The four projects below already exist in the Vercel team "Rodolfo's APP" and are
 | `tpl-saas-landing` | `templates/saas-landing` |
 | `tpl-local-business` | `templates/local-business` |
 | `tpl-portfolio` | `templates/portfolio` |
+| `tpl-ppc-lead-gen` | `templates/ppc-lead-gen` |
 | `templates-gallery` | `apps/gallery` |
 
 ### After setup
