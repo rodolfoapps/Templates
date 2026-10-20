@@ -4,6 +4,7 @@ export type TemplateCategory =
   | "SaaS"
   | "Local business"
   | "Portfolio"
+  | "Lead gen"
   | "Agency"
   | "E-commerce"
   | "Event"

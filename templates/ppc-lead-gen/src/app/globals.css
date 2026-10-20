@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "@templates/ui/styles.css";
+
+@source "../../../../packages/ui/src";
+
+/* Brand tokens — change these to re-skin the whole lander. */
+@theme {
+  --color-brand: #c2410c;
+  --color-brand-dark: #9a3412;
+  --color-brand-light: #ffedd5;
+
+  --color-background: #ffffff;
+  --color-foreground: #1c1917;
+  --color-muted: #57534e;
+  --color-surface: #fafaf9;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+/* Hide scrollbars on the swipeable testimonial row (mobile). */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
