@@ -5,7 +5,7 @@ import { cn } from "@templates/ui";
 type Variant = "ink" | "brand" | "outline" | "outline-light" | "link";
 
 const base =
-  "group inline-flex items-center justify-center gap-2.5 font-display text-[12px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:pointer-events-none disabled:opacity-60";
+  "group inline-flex items-center justify-center gap-2.5 font-display text-[12px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:pointer-events-none disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   ink: "bg-ink text-white hover:bg-brand-dark",

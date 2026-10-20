@@ -44,7 +44,7 @@ export const siteConfig = {
   form: {
     title: "Request a private consultation",
     subtitle: "A patient care coordinator replies within one business day.",
-    button: "Request My Consultation",
+    button: "Request consultation",
     reassurance: "Private and confidential. No obligation. We never share your information.",
     interests: ["Facelift", "Facelift + neck lift", "Facelift + eyelid surgery", "Not sure yet, I'd like guidance"],
     contactMethods: ["Phone call", "Text message", "Email"],
