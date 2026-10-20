@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { siteConfig } from "@/site.config";
 import { Btn } from "@/components/Btn";
 import { CompareSlider } from "@/components/CompareSlider";
+import { GalleryTiles } from "@/components/GalleryTiles";
 import { Reveal } from "@/components/Reveal";
 
 /**
@@ -43,26 +43,8 @@ export function BeforeAfter() {
             </figure>
           </Reveal>
 
-          {/* 2 x 2 composites, uniform 3:2 crop */}
-          <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 lg:col-span-7 lg:mx-0 lg:grid lg:h-full lg:grid-cols-2 lg:grid-rows-2 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
-            {tiles.map((c, i) => (
-              <Reveal as="li" key={c.src} delay={i * 80} className="w-[82%] shrink-0 snap-center lg:h-full lg:w-auto">
-                <figure className="group relative overflow-hidden ring-1 ring-white/10 lg:h-full">
-                  <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full">
-                    <Image src={c.src} alt={`${c.label}: before on the left, after on the right`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="(min-width:1024px) 30vw, 82vw" />
-                    <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
-                    <span className="eyebrow absolute top-3 left-3 text-[9px] text-white/70">Before</span>
-                    <span className="eyebrow absolute top-3 right-3 text-[9px] text-accent">After</span>
-                    <div aria-hidden className="absolute inset-y-0 left-1/2 w-px bg-white/40" />
-                  </div>
-                  <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between px-4 py-3 text-[12px]">
-                    <span className="text-white/90">{c.label}</span>
-                    <span className="font-display text-[11px] text-white/50">0{i + 1} / 0{tiles.length}</span>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </ul>
+          {/* 2 x 2 composites, click to open the lightbox */}
+          <GalleryTiles cases={tiles} />
         </div>
 
         {/* Footer row */}
