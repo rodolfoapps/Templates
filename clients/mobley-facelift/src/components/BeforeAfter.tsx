@@ -1,47 +1,79 @@
 import Image from "next/image";
-import { Container } from "@templates/ui";
 import { siteConfig } from "@/site.config";
 import { Btn } from "@/components/Btn";
 import { CompareSlider } from "@/components/CompareSlider";
 import { Reveal } from "@/components/Reveal";
 
+/**
+ * Dark gallery panel: the comparison slider is the centrepiece, with four
+ * composites cropped to one ratio so the grid sits perfectly even.
+ */
 export function BeforeAfter() {
   const { gallery, photosHref } = siteConfig;
+  const tiles = gallery.cases.slice(0, 4);
+
   return (
-    <section id="results" className="bg-surface py-20 md:py-32">
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-20">
-          <Reveal>
-            <CompareSlider before="/images/cases/hero-before.webp" after="/images/cases/hero-after.webp" width={700} height={934} alt="Facelift patient of Dr. Mobley" />
-            <p className="mt-3 text-xs text-muted">Drag to compare. Facelift by Dr. Mobley, unretouched gallery photo. Results vary.</p>
+    <section id="results" className="relative overflow-hidden bg-ink py-20 text-white md:py-28">
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(121,209,210,0.12),transparent_55%)]" />
+
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header row */}
+        <Reveal className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <p className="eyebrow text-accent">{gallery.eyebrow}</p>
+            <h2 className="mt-4 font-display text-[2.2rem] leading-[1.08] font-light tracking-tight md:text-[3rem]">{gallery.title}</h2>
+          </div>
+          <p className="text-pretty max-w-md text-[15px] leading-relaxed text-white/65 md:text-right">{gallery.description}</p>
+        </Reveal>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-12 lg:gap-6">
+          {/* Slider */}
+          <Reveal className="lg:col-span-5 lg:self-start">
+            <figure className="bg-white/[0.04] p-2 ring-1 ring-white/10">
+              <div className="relative">
+                <CompareSlider before="/images/cases/hero-before.webp" after="/images/cases/hero-after.webp" width={700} height={934} alt="Facelift patient of Dr. Mobley" />
+                <span className="eyebrow pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 bg-ink/70 px-3 py-1.5 text-[10px] text-white/90 backdrop-blur">
+                  Drag to compare
+                </span>
+              </div>
+              <figcaption className="flex items-center justify-between px-2 pt-3 pb-1.5 text-xs text-white/50">
+                <span>Facelift by Dr. Mobley &middot; unretouched</span>
+                <span className="eyebrow text-[9px] text-accent/80">Featured case</span>
+              </figcaption>
+            </figure>
           </Reveal>
-          <Reveal delay={120}>
-            <p className="eyebrow text-brand">{gallery.eyebrow}</p>
-            <h2 className="mt-4 font-display text-[2.2rem] leading-[1.1] font-light tracking-tight md:text-5xl">{gallery.title}</h2>
-            <p className="text-pretty mt-6 max-w-lg text-[17px] leading-relaxed text-muted">{gallery.description}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Btn href="#consult-form" arrow>Request my consultation</Btn>
-              <Btn href={photosHref} variant="outline">{gallery.cta}</Btn>
-            </div>
-          </Reveal>
+
+          {/* 2 x 2 composites, uniform 3:2 crop */}
+          <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 lg:col-span-7 lg:mx-0 lg:grid lg:h-full lg:grid-cols-2 lg:grid-rows-2 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
+            {tiles.map((c, i) => (
+              <Reveal as="li" key={c.src} delay={i * 80} className="w-[82%] shrink-0 snap-center lg:h-full lg:w-auto">
+                <figure className="group relative overflow-hidden ring-1 ring-white/10 lg:h-full">
+                  <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full">
+                    <Image src={c.src} alt={`${c.label}: before on the left, after on the right`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" sizes="(min-width:1024px) 30vw, 82vw" />
+                    <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+                    <span className="eyebrow absolute top-3 left-3 text-[9px] text-white/70">Before</span>
+                    <span className="eyebrow absolute top-3 right-3 text-[9px] text-accent">After</span>
+                    <div aria-hidden className="absolute inset-y-0 left-1/2 w-px bg-white/40" />
+                  </div>
+                  <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between px-4 py-3 text-[12px]">
+                    <span className="text-white/90">{c.label}</span>
+                    <span className="font-display text-[11px] text-white/50">0{i + 1} / 0{tiles.length}</span>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </ul>
         </div>
 
-        <ul className="no-scrollbar -mx-4 mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pt-1 pb-12 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
-          {gallery.cases.slice(0, 3).map((c, i) => (
-            <Reveal as="li" key={c.src} delay={i * 90} className="w-[82%] shrink-0 snap-center md:w-auto">
-              <figure className="bg-white p-2 shadow-soft">
-                <div className="relative overflow-hidden">
-                  <Image src={c.src} alt={`${c.label}: before on the left, after on the right`} width={c.w} height={c.h} className="w-full" sizes="(min-width:768px) 33vw, 82vw" />
-                </div>
-                <figcaption className="flex items-center justify-between px-2 pt-3 pb-1 text-xs text-muted">
-                  <span>{c.label}</span>
-                  <span className="eyebrow text-[9px]">Before &middot; After</span>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </ul>
-      </Container>
+        {/* Footer row */}
+        <Reveal className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
+          <p className="text-xs text-white/45">Photos from the Mobley MD gallery. Individual results vary. Every plan is built around your face at consultation.</p>
+          <div className="flex flex-wrap gap-3">
+            <Btn href="#consult-form" variant="brand" arrow>Request my consultation</Btn>
+            <Btn href={photosHref} variant="outline-light">{gallery.cta}</Btn>
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
 }
