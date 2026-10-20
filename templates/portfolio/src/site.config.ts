@@ -8,7 +8,7 @@ export const siteConfig = {
   tagline: "Brand & digital design studio.",
   description:
     "Studio Vela is an independent design practice crafting identities, websites and products for ambitious founders.",
-  url: "https://tpl-portfolio.vercel.app",
+  url: "https://tpl-portfolio-beige.vercel.app",
   legalName: "Studio Vela",
   email: "hello@studiovela.example",
   location: "Lisbon · Remote worldwide",

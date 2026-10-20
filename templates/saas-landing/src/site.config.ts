@@ -9,7 +9,7 @@ export const siteConfig = {
   tagline: "Analytics your whole team will actually use.",
   description:
     "Northwind turns product events into clear dashboards, alerts and weekly reports — without a data team.",
-  url: "https://tpl-saas-landing.vercel.app",
+  url: "https://tpl-saas-landing-indol.vercel.app",
   legalName: "Northwind Analytics, Inc.",
 
   nav: [

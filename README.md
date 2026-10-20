@@ -25,10 +25,10 @@ pnpm check                               # lint + typecheck + build everything
 
 | Template | Package | Preview |
 | --- | --- | --- |
-| SaaS Landing | `tpl-saas-landing` | https://tpl-saas-landing.vercel.app |
+| SaaS Landing | `tpl-saas-landing` | https://tpl-saas-landing-indol.vercel.app |
 | Local Business | `tpl-local-business` | https://tpl-local-business.vercel.app |
-| Portfolio | `tpl-portfolio` | https://tpl-portfolio.vercel.app |
-| Gallery | `gallery` | https://templates-gallery.vercel.app |
+| Portfolio | `tpl-portfolio` | https://tpl-portfolio-beige.vercel.app |
+| Gallery | `gallery` | https://templates-gallery-eight.vercel.app |
 
 ## How a template is built
 
@@ -67,7 +67,7 @@ One GitHub repo, many Vercel projects. Each project points at a different **Root
 1. Vercel dashboard → **Add New… → Project** → import `rodolfoapps/Templates`.
 2. Set **Root Directory** to the app folder, e.g. `templates/saas-landing` or `clients/acme`.
 3. Framework preset: Next.js (auto-detected). Leave build/install commands as default — Vercel detects pnpm from the lockfile and installs from the repo root.
-4. Under **Settings → Git → Ignored Build Step**, set the command to `npx turbo-ignore`. The project then only rebuilds when its own folder or a shared package changed.
+4. Under **Settings → Git**, enable **Skip deployments when there are no changes to the root directory and its dependencies** ("affected projects"). The project then only rebuilds when its own folder or a shared package changed.
 5. Optional: add `NEXT_PUBLIC_MOCKUP_BANNER=off` as an env var once a client site goes live.
 
 Or from the CLI at the repo root:
@@ -77,6 +77,15 @@ npx vercel link --repo      # links every workspace app to a Vercel project in o
 ```
 
 Project naming convention: `tpl-<slug>` for templates, `client-<slug>` for client mockups, `templates-gallery` for the gallery.
+
+The four projects below already exist in the Vercel team "Rodolfo's APP" and are linked to this repo. Deployment Protection is turned off on them so clients can open the links without a Vercel login.
+
+| Vercel project | Root Directory |
+| --- | --- |
+| `tpl-saas-landing` | `templates/saas-landing` |
+| `tpl-local-business` | `templates/local-business` |
+| `tpl-portfolio` | `templates/portfolio` |
+| `templates-gallery` | `apps/gallery` |
 
 ### After setup
 
