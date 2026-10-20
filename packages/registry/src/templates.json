@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "saas-landing",
+    "name": "SaaS Landing",
+    "description": "Product landing page with hero, feature grid, pricing table, testimonials and a conversion CTA.",
+    "category": "SaaS",
+    "url": "https://tpl-saas-landing.vercel.app",
+    "tags": ["pricing", "features", "testimonials", "dark-hero"],
+    "accent": "#6366f1"
+  },
+  {
+    "slug": "local-business",
+    "name": "Local Business",
+    "description": "Service business site with services list, about section, hours, reviews and a contact form.",
+    "category": "Local business",
+    "url": "https://tpl-local-business.vercel.app",
+    "tags": ["services", "contact-form", "hours", "reviews"],
+    "accent": "#0d9488"
+  },
+  {
+    "slug": "portfolio",
+    "name": "Portfolio",
+    "description": "Minimal personal or studio portfolio with project grid, about, selected clients and contact.",
+    "category": "Portfolio",
+    "url": "https://tpl-portfolio.vercel.app",
+    "tags": ["projects", "minimal", "about", "contact"],
+    "accent": "#f59e0b"
+  }
+]

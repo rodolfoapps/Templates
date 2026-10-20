@@ -1,0 +1,9 @@
+packages:
+  - "apps/*"
+  - "templates/*"
+  - "clients/*"
+  - "packages/*"
+
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver

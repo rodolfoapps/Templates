@@ -1,0 +1,33 @@
+/*
+ * Shared base styles for every template.
+ * Each app imports this AFTER `@import "tailwindcss"` and defines its own
+ * brand tokens in an `@theme` block (see any template's globals.css).
+ */
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  ::selection {
+    @apply bg-brand/20;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}

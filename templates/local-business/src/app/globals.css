@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "@templates/ui/styles.css";
+
+@source "../../../../packages/ui/src";
+
+/* Brand tokens — change these to re-skin the whole template. */
+@theme {
+  --color-brand: #0d9488;
+  --color-brand-dark: #0f766e;
+  --color-brand-light: #ccfbf1;
+
+  --color-background: #fffdf9;
+  --color-foreground: #1c1917;
+  --color-muted: #78716c;
+  --color-surface: #f5f1ea;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
