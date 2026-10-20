@@ -1,63 +1,60 @@
 import Image from "next/image";
 import { Container } from "@templates/ui";
 import { siteConfig } from "@/site.config";
-
-const icons: Record<string, { src: string; w: number; h: number }> = {
-  seal: { src: "/images/icon-abfprs.png", w: 158, h: 158 },
-  book: { src: "/images/icon-book.png", w: 158, h: 132 },
-  award: { src: "/images/icon-award.png", w: 96, h: 149 },
-};
+import { Reveal } from "@/components/Reveal";
 
 export function WhyMobley() {
   const { why, cvHref } = siteConfig;
   return (
-    <section id="why" className="bg-charcoal text-white">
-      <Container className="grid gap-10 py-16 md:grid-cols-[0.85fr_1.15fr] md:gap-12 md:py-0">
-        {/* Portrait column */}
-        <div className="relative order-2 -mb-16 flex items-end justify-center md:order-1 md:mb-0">
+    <section id="why" className="relative overflow-hidden bg-white">
+      <Container className="grid md:grid-cols-2 md:gap-12 lg:gap-20">
+        {/* Portrait on a soft circle */}
+        <div className="relative order-2 flex items-end justify-center pt-10 md:order-1 md:pt-0">
+          <div aria-hidden className="absolute bottom-0 left-1/2 aspect-square w-[88%] -translate-x-1/2 translate-y-[18%] rounded-full bg-[radial-gradient(circle_at_50%_40%,#e3f3f5,#f4f3f0_60%,transparent_72%)]" />
           <Image
             src="/images/dr-steven-mobley.webp"
             alt="Dr. Steven Mobley, double board-certified facial plastic surgeon, Salt Lake City"
             width={900}
             height={1125}
-            className="w-[78%] max-w-sm object-contain object-bottom md:h-full md:max-h-[820px] md:w-auto md:max-w-full"
-            sizes="(min-width:768px) 40vw, 80vw"
+            className="relative h-auto w-[82%] max-w-[420px] md:w-full md:max-w-[600px]"
+            sizes="(min-width:768px) 40vw, 82vw"
           />
+          <figcaption className="eyebrow absolute bottom-6 left-0 hidden text-[10px] text-muted md:block">
+            Steven Mobley, MD
+          </figcaption>
         </div>
 
-        <div className="order-1 md:order-2 md:py-20">
-          <p className="eyebrow text-accent">{why.eyebrow}</p>
-          <h2 className="mt-3 font-display text-3xl font-light tracking-tight md:text-4xl">{why.title}</h2>
-          <p className="text-pretty mt-5 leading-relaxed text-white/80">{why.entity}</p>
+        <Reveal className="order-1 py-20 md:order-2 md:py-32">
+          <p className="eyebrow text-brand">{why.eyebrow}</p>
+          <h2 className="mt-4 font-display text-[2.2rem] leading-[1.1] font-light tracking-tight md:text-5xl">{why.title}</h2>
+          <p className="text-pretty mt-6 max-w-xl text-[17px] leading-relaxed text-muted">{why.entity}</p>
 
-          <dl className="mt-8 grid grid-cols-2 gap-6 border-y border-white/10 py-6 sm:grid-cols-4">
+          <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-y border-foreground/10 py-8 sm:grid-cols-4">
             {why.stats.map((s) => (
               <div key={s.label}>
-                <dt className="font-display text-2xl font-medium text-accent">{s.value}</dt>
-                <dd className="mt-1 text-xs text-white/60">{s.label}</dd>
+                <dt className="font-display text-[1.9rem] leading-none font-light tracking-tight text-foreground">{s.value}</dt>
+                <dd className="mt-2 text-xs text-muted">{s.label}</dd>
               </div>
             ))}
           </dl>
 
-          <ul className="mt-8 space-y-6">
-            {why.points.map((p) => {
-              const ic = icons[p.icon];
-              return (
-                <li key={p.title} className="flex gap-4">
-                  {ic ? <Image src={ic.src} alt="" width={ic.w} height={ic.h} className="size-10 shrink-0 object-contain opacity-90" /> : null}
-                  <div>
-                    <h3 className="font-display text-base font-medium">{p.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-white/70">{p.text}</p>
-                  </div>
-                </li>
-              );
-            })}
+          <ul className="mt-2 divide-y divide-foreground/10">
+            {why.points.map((p, i) => (
+              <li key={p.title} className="grid gap-2 py-6 sm:grid-cols-[2.5rem_1fr]">
+                <span className="eyebrow pt-1 text-[10px] text-brand">0{i + 1}</span>
+                <div>
+                  <h3 className="font-display text-base font-medium">{p.title}</h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-muted">{p.text}</p>
+                </div>
+              </li>
+            ))}
           </ul>
 
-          <a href={cvHref} target="_blank" rel="noreferrer" className="eyebrow mt-8 inline-block text-accent underline-offset-4 hover:underline">
+          <a href={cvHref} target="_blank" rel="noreferrer" className="eyebrow mt-6 inline-flex items-center gap-2 text-brand underline-offset-[6px] hover:underline">
             Read Dr. Mobley&apos;s full CV
+            <span aria-hidden>&rarr;</span>
           </a>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

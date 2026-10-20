@@ -5,30 +5,34 @@
 
 /*
  * Mobley MD brand tokens, taken from mobleymd.com:
- * Montserrat (light headings, letter-spaced uppercase labels), Open Sans body,
- * charcoal panels, cyan accent from the logo (#79d1d2), rectangular buttons.
+ * Montserrat light display type, Open Sans body, charcoal panels, logo cyan.
+ * Warm off-white "stone" surfaces keep the page from feeling clinical.
  */
 @theme {
-  --color-brand: #2aa7bd;        /* cyan with enough contrast on white */
-  --color-brand-dark: #1f8a9d;
-  --color-brand-light: #e4f5f7;
-  --color-accent: #79d1d2;       /* logo cyan, for use on dark panels */
+  --color-brand: #1f93a8;
+  --color-brand-dark: #177a8c;
+  --color-brand-light: #e3f3f5;
+  --color-accent: #79d1d2;
 
   --color-background: #ffffff;
-  --color-foreground: #2b2b2b;
-  --color-muted: #4b4f58;
-  --color-surface: #f5f5f5;
-  --color-charcoal: #3a3a3a;
-  --color-ink: #262626;
+  --color-foreground: #202225;
+  --color-muted: #6a6e75;
+  --color-surface: #f4f3f0;
+  --color-sand: #e8e5df;
+  --color-charcoal: #2c2e30;
+  --color-ink: #121315;
 
   --font-sans: var(--font-open-sans), "Open Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 30px 80px -20px rgb(0 0 0 / 0.45), 0 0 0 1px rgb(0 0 0 / 0.04);
+  --shadow-soft: 0 20px 60px -24px rgb(0 0 0 / 0.25);
 }
 
 @layer base {
-  h1, h2, h3, h4 {
-    font-family: var(--font-display);
-  }
+  body { font-size: 1rem; line-height: 1.7; }
+  h1, h2, h3, h4 { font-family: var(--font-display); }
+  ::selection { background: #79d1d2; color: #121315; }
 }
 
 @utility no-scrollbar {
@@ -36,11 +40,34 @@
   &::-webkit-scrollbar { display: none; }
 }
 
-/* Site-style small caps label */
+/* Small-caps label used across the site */
 @utility eyebrow {
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+/* Thin horizontal rule used between stacked items */
+@utility hairline {
+  border-color: color-mix(in srgb, currentColor 14%, transparent);
+}
+
+/* Scroll-reveal: elements start hidden, .is-visible fades them up */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  &.is-visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { opacity: 1; transform: none; transition: none; }
+  @media (scripting: none) { opacity: 1; transform: none; }
+}
+
+/* Comparison slider */
+@utility range-reset {
+  appearance: none;
+  background: transparent;
+  &::-webkit-slider-thumb { appearance: none; width: 44px; height: 44px; background: transparent; cursor: ew-resize; }
+  &::-moz-range-thumb { width: 44px; height: 44px; background: transparent; border: 0; cursor: ew-resize; }
 }

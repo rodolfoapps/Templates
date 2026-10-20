@@ -2,37 +2,45 @@ import Image from "next/image";
 import { Container } from "@templates/ui";
 import { siteConfig } from "@/site.config";
 import { Btn } from "@/components/Btn";
+import { CompareSlider } from "@/components/CompareSlider";
+import { Reveal } from "@/components/Reveal";
 
 export function BeforeAfter() {
   const { gallery, photosHref } = siteConfig;
   return (
-    <section id="results" className="py-16 md:py-24">
+    <section id="results" className="bg-surface py-20 md:py-32">
       <Container>
-        <div className="max-w-2xl">
-          <p className="eyebrow text-brand">{gallery.eyebrow}</p>
-          <h2 className="mt-3 font-display text-3xl font-light tracking-tight md:text-4xl">{gallery.title}</h2>
-          <p className="text-pretty mt-4 text-muted">{gallery.description}</p>
+        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-20">
+          <Reveal>
+            <CompareSlider before="/images/cases/hero-before.webp" after="/images/cases/hero-after.webp" width={700} height={934} alt="Facelift patient of Dr. Mobley" />
+            <p className="mt-3 text-xs text-muted">Drag to compare. Facelift by Dr. Mobley, unretouched gallery photo. Results vary.</p>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="eyebrow text-brand">{gallery.eyebrow}</p>
+            <h2 className="mt-4 font-display text-[2.2rem] leading-[1.1] font-light tracking-tight md:text-5xl">{gallery.title}</h2>
+            <p className="text-pretty mt-6 max-w-lg text-[17px] leading-relaxed text-muted">{gallery.description}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Btn href="#consult-form" arrow>Request my consultation</Btn>
+              <Btn href={photosHref} variant="outline">{gallery.cta}</Btn>
+            </div>
+          </Reveal>
         </div>
 
-        <ul className="no-scrollbar mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible lg:grid-cols-3">
-          {gallery.cases.map((c) => (
-            <li key={c.src} className="w-[86%] shrink-0 snap-center md:w-auto">
-              <figure>
-                <div className="relative">
-                  <Image src={c.src} alt={`${c.label}: before on the left, after on the right`} width={c.w} height={c.h} className="w-full bg-surface" sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 86vw" />
-                  <span className="eyebrow absolute bottom-2 left-2 bg-black/55 px-2 py-1 text-[10px] text-white">Before</span>
-                  <span className="eyebrow absolute right-2 bottom-2 bg-brand px-2 py-1 text-[10px] text-white">After</span>
+        <ul className="no-scrollbar -mx-4 mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pt-1 pb-12 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
+          {gallery.cases.slice(0, 3).map((c, i) => (
+            <Reveal as="li" key={c.src} delay={i * 90} className="w-[82%] shrink-0 snap-center md:w-auto">
+              <figure className="bg-white p-2 shadow-soft">
+                <div className="relative overflow-hidden">
+                  <Image src={c.src} alt={`${c.label}: before on the left, after on the right`} width={c.w} height={c.h} className="w-full" sizes="(min-width:768px) 33vw, 82vw" />
                 </div>
-                <figcaption className="mt-2 text-sm text-muted">{c.label}</figcaption>
+                <figcaption className="flex items-center justify-between px-2 pt-3 pb-1 text-xs text-muted">
+                  <span>{c.label}</span>
+                  <span className="eyebrow text-[9px]">Before &middot; After</span>
+                </figcaption>
               </figure>
-            </li>
+            </Reveal>
           ))}
         </ul>
-
-        <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-          <Btn href={photosHref} variant="outline">{gallery.cta}</Btn>
-          <Btn href="#consult-form">Request my consultation</Btn>
-        </div>
       </Container>
     </section>
   );

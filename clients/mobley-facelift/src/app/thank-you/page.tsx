@@ -12,7 +12,7 @@ export const metadata: Metadata = { title: "Thank you | Mobley MD", robots: { in
 export default function ThankYouPage() {
   return (
     <>
-      <Header />
+      <Header solid />
       <main className="flex flex-1 items-center bg-surface">
         <Container className="py-24 text-center">
           <span aria-hidden className="mx-auto flex size-14 items-center justify-center rounded-full bg-brand-light text-brand"><CheckIcon className="size-7" /></span>

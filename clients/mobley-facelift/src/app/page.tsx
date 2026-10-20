@@ -17,9 +17,11 @@ export default function FaceliftLander() {
   return (
     <>
       <MockupBanner label="Preview mockup prepared for Mobley MD" note="not live, not indexed" />
-      <Header />
       <main className="flex-1 pb-20 md:pb-0">
-        <Hero />
+        <div className="relative">
+          <Header />
+          <Hero />
+        </div>
         <PressStrip />
         <BeforeAfter />
         <WhyMobley />
