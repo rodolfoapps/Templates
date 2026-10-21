@@ -48,6 +48,11 @@ Every claim on the page and its source on mobleymd.com. Dr. Mobley can confirm t
 | Risk list | Facelift page FAQ "Most common risks" |
 | Airfare credit up to $500 for out-of-town patients | Banner on the current facelift page |
 | Press logos: Cosmopolitan, ABC News, GMA, Inside Edition, People, Castle Connolly | Homepage "Respected and known by" strip |
+| Hundreds of face and neck procedures over 20+ years | Facelift page intro |
+| Surgical instruments of his own design for facelift and neck lift (patent applications filed) | CV page, "Patents" |
+| Lectured on neck and jaw contouring to the International Society of Aesthetic Plastic Surgeons | National Lecturer page (Miami, ISAPS) |
+| Fellowship, University of Illinois at Chicago | CV page, "Training" |
+| Quote "I feel strongly about avoiding a surgical, pulled-too-tight look…" | Facelift page FAQ, verbatim |
 | Lynette McAferty testimonial | Facelift page "What our patients are saying" |
 | Two anonymous reviews | Testimonials page (Facebook reviews) |
 

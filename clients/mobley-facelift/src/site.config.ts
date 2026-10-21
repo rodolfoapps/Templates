@@ -69,16 +69,16 @@ export const siteConfig = {
     quote:
       "I feel strongly about avoiding a surgical, pulled-too-tight look, and I find that conservative tightening is the best way to go.",
     quoteSource: "Dr. Mobley, in his own words on facelift surgery",
-    text:
-      "Dr. Steven Mobley has focused his entire career on the face and neck. He trained in facial plastic and reconstructive surgery at the University of Illinois at Chicago, spent over a decade teaching the next generation of surgeons at the University of Utah, and has served Salt Lake City patients since 2002. Today he operates in his own accredited surgical suite and sees every consultation personally.",
-    facts: [
-      { label: "Board-certified", value: "ABFPRS 2005 \u00b7 ABOto-HNS 2002" },
-      { label: "In practice", value: "Salt Lake City since 2002" },
-      { label: "Fellow", value: "American Academy of Facial Plastic & Reconstructive Surgery" },
-      { label: "Recognized", value: "Castle Connolly Top Doctor" },
+    paragraphs: [
+      "Dr. Steven Mobley has focused his entire career on the face and neck. He trained in facial plastic and reconstructive surgery at the University of Illinois at Chicago, spent over a decade teaching the next generation of surgeons at the University of Utah, and has served Salt Lake City patients since 2002.",
+      "Facelift and neck lift surgery is at the centre of that work. Over more than 20 years he has performed hundreds of face and neck procedures, refined a modified deep plane approach that lifts the SMAS layer rather than pulling the skin, and designed his own surgical instruments for facelift and neck lift procedures. He has lectured on neck and jaw contouring to the International Society of Aesthetic Plastic Surgeons and teaches his techniques to other surgeons.",
     ],
-    cta: "Request consultation",
-    cvCta: "Read his full CV",
+    highlights: [
+      "Hundreds of face and neck procedures over 20+ years",
+      "Modified deep plane technique: lifts the SMAS layer, not the skin",
+      "Surgical instruments of his own design for facelift and neck lift",
+      "Lectures to surgeons on neck and jaw contouring",
+    ],
   },
 
   gallery: {
