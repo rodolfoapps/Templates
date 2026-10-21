@@ -29,16 +29,8 @@ export function WhyMobley() {
           <h2 className="mt-4 font-display text-[2.2rem] leading-[1.1] font-light tracking-tight md:text-5xl">{why.title}</h2>
           <p className="text-pretty mt-6 max-w-xl text-[17px] leading-relaxed text-muted">{why.entity}</p>
 
-          <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-y border-foreground/10 py-8 sm:grid-cols-4">
-            {why.stats.map((s) => (
-              <div key={s.label}>
-                <dt className="font-display text-[1.9rem] leading-none font-light tracking-tight text-foreground">{s.value}</dt>
-                <dd className="mt-2 text-xs text-muted">{s.label}</dd>
-              </div>
-            ))}
-          </dl>
 
-          <ul className="mt-2 divide-y divide-foreground/10">
+          <ul className="mt-8 divide-y divide-foreground/10 border-t border-foreground/10">
             {why.points.map((p, i) => (
               <li key={p.title} className="grid gap-2 py-6 sm:grid-cols-[2.5rem_1fr]">
                 <span className="eyebrow pt-1 text-[10px] text-brand">0{i + 1}</span>

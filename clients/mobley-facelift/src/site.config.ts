@@ -74,10 +74,16 @@ export const siteConfig = {
       "Facelift and neck lift surgery is at the centre of that work. Over more than 20 years he has performed hundreds of face and neck procedures, refined a modified deep plane approach that lifts the SMAS layer rather than pulling the skin, and designed his own surgical instruments for facelift and neck lift procedures. He has lectured on neck and jaw contouring to the International Society of Aesthetic Plastic Surgeons and teaches his techniques to other surgeons.",
     ],
     highlights: [
-      "Hundreds of face and neck procedures over 20+ years",
-      "Modified deep plane technique: lifts the SMAS layer, not the skin",
-      "Surgical instruments of his own design for facelift and neck lift",
-      "Lectures to surgeons on neck and jaw contouring",
+      { title: "Hundreds of procedures", text: "Face and neck surgery over more than 20 years in practice" },
+      { title: "Deep plane technique", text: "Lifts the SMAS layer beneath the skin for a natural, lasting result" },
+      { title: "Instruments of his own design", text: "Surgical clamp and retractor developed for facelift and neck lift" },
+      { title: "Teaches other surgeons", text: "Lectures on neck and jaw contouring to the International Society of Aesthetic Plastic Surgeons" },
+    ],
+    stats: [
+      { value: "20+", label: "Years in practice" },
+      { value: "100s", label: "Face & neck procedures" },
+      { value: "85+", label: "Lectures to surgeons" },
+      { value: "50+", label: "Published works" },
     ],
   },
 
