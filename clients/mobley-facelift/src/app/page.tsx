@@ -2,6 +2,7 @@ import { MockupBanner } from "@templates/ui";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { PressStrip } from "@/components/PressStrip";
+import { MeetDoctor } from "@/components/MeetDoctor";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { WhyMobley } from "@/components/WhyMobley";
 import { Approach } from "@/components/Approach";
@@ -23,6 +24,7 @@ export default function FaceliftLander() {
           <Hero />
         </div>
         <PressStrip />
+        <MeetDoctor />
         <BeforeAfter />
         <WhyMobley />
         <Approach />

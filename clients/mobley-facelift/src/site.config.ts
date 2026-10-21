@@ -62,6 +62,25 @@ export const siteConfig = {
     ],
   },
 
+  meet: {
+    eyebrow: "Meet your surgeon",
+    name: "Dr. Steven Mobley",
+    role: "Double board-certified facial plastic surgeon \u00b7 Salt Lake City, Utah",
+    quote:
+      "I feel strongly about avoiding a surgical, pulled-too-tight look, and I find that conservative tightening is the best way to go.",
+    quoteSource: "Dr. Mobley, in his own words on facelift surgery",
+    text:
+      "Dr. Steven Mobley has focused his entire career on the face and neck. He trained in facial plastic and reconstructive surgery at the University of Illinois at Chicago, spent over a decade teaching the next generation of surgeons at the University of Utah, and has served Salt Lake City patients since 2002. Today he operates in his own accredited surgical suite and sees every consultation personally.",
+    facts: [
+      { label: "Board-certified", value: "ABFPRS 2005 \u00b7 ABOto-HNS 2002" },
+      { label: "In practice", value: "Salt Lake City since 2002" },
+      { label: "Fellow", value: "American Academy of Facial Plastic & Reconstructive Surgery" },
+      { label: "Recognized", value: "Castle Connolly Top Doctor" },
+    ],
+    cta: "Request consultation",
+    cvCta: "Read his full CV",
+  },
+
   gallery: {
     eyebrow: "Real patients of Dr. Mobley",
     title: "Facelift before & after",
@@ -82,7 +101,7 @@ export const siteConfig = {
     eyebrow: "Why patients travel for Dr. Mobley",
     title: "The surgeon who teaches other surgeons.",
     entity:
-      "Dr. Steven Mobley is a double board-certified facial plastic surgeon in Salt Lake City, Utah. He has focused his entire career on the face and neck, served as Associate Professor of Surgery and Director of Facial Plastic and Reconstructive Surgery at the University of Utah, and is Medical Director of Millcreek Surgical Suite.",
+      "Facial plastic surgeons learn their craft from a small number of teachers. Dr. Mobley is one of them: a former Associate Professor of Surgery and Director of Facial Plastic and Reconstructive Surgery at the University of Utah, with more than 85 lectures to surgeons across North America and Europe and chapters in the textbooks used to train them.",
     stats: [
       { value: "Since 2002", label: "Serving Salt Lake City" },
       { value: "2×", label: "Board-certified" },
