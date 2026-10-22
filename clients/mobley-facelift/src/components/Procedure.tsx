@@ -36,7 +36,7 @@ export function Procedure() {
             </ul>
           </Reveal>
 
-          <Reveal delay={120} className="grid gap-8 sm:grid-cols-[1fr_200px] sm:items-start">
+          <Reveal delay={120} className="grid gap-8 sm:grid-cols-[1fr_240px] sm:items-start">
             <div>
               <span className="eyebrow text-[10px] text-brand">02</span>
               <h3 className="mt-2 font-display text-2xl font-light tracking-tight md:text-[1.9rem]">{procedure.technique.title}</h3>
@@ -50,7 +50,7 @@ export function Procedure() {
                 ))}
               </ul>
             </div>
-            <figure className="mx-auto w-full max-w-[220px] text-foreground/70 sm:sticky sm:top-28">
+            <figure className="mx-auto w-full max-w-[260px] text-foreground/70 sm:sticky sm:top-28">
               <IncisionDiagram className="w-full" />
               <figcaption className="mt-2 text-center text-[11px] text-muted">Typical incision placement, dotted. Exact placement is planned for your face.</figcaption>
             </figure>

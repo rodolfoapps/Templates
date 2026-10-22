@@ -1,41 +1,54 @@
 /**
- * Thin-line illustration of facelift incision placement: in the temporal
- * hairline, along the natural crease in front of the ear, around the lobe
- * and into the hairline behind the ear. Drawn in the site's icon style.
+ * Thin-line profile illustration of classic facelift incision placement:
+ * temporal hairline, in front of the ear, around the lobe, behind the ear
+ * and back into the hair. Drawn in the site's icon style.
  */
 export function IncisionDiagram({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 320 380" className={className} fill="none" stroke="currentColor" strokeWidth={1.4} strokeLinecap="round" strokeLinejoin="round" aria-labelledby="incision-title" role="img">
+    <svg viewBox="0 0 380 400" className={className} fill="none" stroke="currentColor" strokeWidth={1.4} strokeLinecap="round" strokeLinejoin="round" role="img" aria-labelledby="incision-title" style={{ fontFamily: "var(--font-display)" }}>
       <title id="incision-title">Facelift incision placement, hidden around the ear and in the hairline</title>
-      {/* head and neck, three-quarter profile */}
-      <path d="M118 46c38-30 96-26 128 10 24 28 26 70 16 104-6 20-10 38-6 58 3 16-6 30-18 40-12 10-20 24-22 40l-3 44" />
-      <path d="M118 46c-22 18-34 48-32 80 1 22 8 40 6 62-1 14-8 26-6 40 2 12 10 20 14 32l6 42" />
-      {/* hairline */}
-      <path d="M100 118c8-36 36-62 74-70 36-7 70 10 86 42" strokeDasharray="0" opacity="0.35" />
-      {/* brow, nose, mouth, jaw hints */}
-      <path d="M214 150c10-6 24-6 34 0" opacity="0.45" />
-      <path d="M244 160c6 22 10 44-4 60 4 8 12 10 18 6" opacity="0.45" />
-      <path d="M226 258c10 6 24 6 34-2" opacity="0.45" />
-      <path d="M118 232c20 30 60 56 112 50" opacity="0.35" />
-      {/* ear */}
-      <path d="M152 182c-14-12-32-6-34 14-2 22 10 40 26 48 10 4 18 0 20-10" />
-      <path d="M140 196c-6 2-10 10-6 18 4 10 14 16 20 14" opacity="0.5" />
-      {/* incision line: temporal hairline → in front of ear → under lobe → behind ear into hairline */}
-      <path d="M150 124c-10 14-14 30-10 46" stroke="#1f93a8" strokeWidth={2} strokeDasharray="5 5" />
-      <path d="M140 170c-4 14-6 30 2 46 4 10 12 20 20 26" stroke="#1f93a8" strokeWidth={2} strokeDasharray="5 5" />
-      <path d="M162 242c-10 4-22 2-30-8-8-10-12-22-10-36" stroke="#1f93a8" strokeWidth={2} strokeDasharray="5 5" />
-      <path d="M122 198c-8 10-14 24-12 40" stroke="#1f93a8" strokeWidth={2} strokeDasharray="5 5" />
-      {/* callouts */}
-      <circle cx="150" cy="124" r="3" fill="#1f93a8" stroke="none" />
-      <circle cx="162" cy="242" r="3" fill="#1f93a8" stroke="none" />
-      <circle cx="110" cy="238" r="3" fill="#1f93a8" stroke="none" />
-      <path d="M150 124H64" opacity="0.5" />
-      <path d="M162 242h-20v40H64" opacity="0.5" />
-      <path d="M110 238l-14 54H64" opacity="0.5" />
-      <text x="10" y="120" fontSize="10" fill="currentColor" stroke="none" fontFamily="var(--font-display)" letterSpacing="0.12em">HAIRLINE</text>
-      <text x="10" y="278" fontSize="10" fill="currentColor" stroke="none" fontFamily="var(--font-display)" letterSpacing="0.12em">EAR CREASE</text>
-      <text x="10" y="288" fontSize="10" fill="currentColor" stroke="none" fontFamily="var(--font-display)" letterSpacing="0.12em" opacity="0.7">&amp; LOBE</text>
-      <text x="10" y="320" fontSize="10" fill="currentColor" stroke="none" fontFamily="var(--font-display)" letterSpacing="0.12em">BEHIND EAR</text>
+
+  {/* skull / face profile, facing left */}
+  <path d="M166 30 C 120 34, 92 70, 86 112 C 84 122, 80 128, 76 132 C 70 140, 74 150, 72 158 C 68 170, 58 182, 56 192 C 55 200, 66 206, 76 206 C 72 214, 70 222, 76 226 C 72 232, 70 240, 76 246 C 72 254, 78 262, 86 268 C 96 278, 112 282, 118 292 C 124 306, 126 330, 130 370" />
+  <path d="M166 30 C 214 28, 254 48, 270 92 C 282 126, 282 170, 268 206 C 258 232, 240 246, 230 262 C 222 276, 222 300, 222 370" />
+  {/* hair mass (light) */}
+  <path d="M96 104 C 104 66, 136 44, 170 40 C 214 36, 248 58, 262 94 C 272 118, 272 158, 262 190 C 258 204, 250 216, 244 226" opacity="0.4" />
+  <path d="M176 112 C 180 128, 186 140, 190 148" opacity="0.4" />
+  {/* brow, eye, nostril, lips */}
+  <path d="M78 120 C 86 114, 98 112, 108 114" opacity="0.6" />
+  <path d="M92 138 C 100 134, 108 134, 114 138" opacity="0.6" />
+  <path d="M66 200 C 72 198, 78 200, 82 204" opacity="0.6" />
+  <path d="M76 226 C 84 224, 92 226, 98 230" opacity="0.6" />
+  {/* ear */}
+  <path d="M196 142 C 206 128, 230 134, 232 156 C 234 178, 226 200, 214 212 C 206 220, 194 216, 192 206 C 190 194, 190 178, 192 166" />
+  <path d="M202 156 C 212 150, 222 158, 220 172 C 218 184, 212 194, 206 200" opacity="0.55" />
+  <path d="M192 166 C 198 170, 202 178, 200 186" opacity="0.55" />
+  {/* incision path */}
+  <g stroke="#1f93a8" strokeWidth="2.2" strokeDasharray="5 4">
+    <path d="M178 104 C 182 122, 188 138, 192 150" />
+    <path d="M192 150 C 188 166, 188 190, 194 206 C 198 214, 206 220, 214 214" />
+    <path d="M214 214 C 226 204, 236 188, 238 168" />
+    <path d="M238 168 C 246 160, 258 156, 272 158" />
+  </g>
+  <g fill="#1f93a8" stroke="none">
+    <circle cx="178" cy="104" r="3.2" />
+    <circle cx="192" cy="166" r="3.2" />
+    <circle cx="214" cy="214" r="3.2" />
+    <circle cx="272" cy="158" r="3.2" />
+  </g>
+  {/* leaders + labels (right side) */}
+  <g opacity="0.55">
+    <path d="M178 104 L 296 104" />
+    <path d="M272 158 L 296 158" />
+    <path d="M214 214 L 296 214" />
+    <path d="M192 166 L 192 250 L 296 250" />
+  </g>
+  <g fill="currentColor" stroke="none" fontSize="9.5" letterSpacing="0.12em">
+    <text x="302" y="100">TEMPORAL</text><text x="302" y="111">HAIRLINE</text>
+    <text x="302" y="154">BEHIND EAR</text><text x="302" y="165">INTO HAIR</text>
+    <text x="302" y="210">AROUND</text><text x="302" y="221">THE LOBE</text>
+    <text x="302" y="246">IN FRONT</text><text x="302" y="257">OF EAR</text>
+  </g>
     </svg>
   );
 }
