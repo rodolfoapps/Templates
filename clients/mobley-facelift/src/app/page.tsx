@@ -4,8 +4,7 @@ import { Hero } from "@/components/Hero";
 import { PressStrip } from "@/components/PressStrip";
 import { MeetDoctor } from "@/components/MeetDoctor";
 import { BeforeAfter } from "@/components/BeforeAfter";
-import { WhyMobley } from "@/components/WhyMobley";
-import { Approach } from "@/components/Approach";
+import { Procedure } from "@/components/Procedure";
 import { Testimonials } from "@/components/Testimonials";
 import { Facility } from "@/components/Facility";
 import { Faq } from "@/components/Faq";
@@ -26,8 +25,7 @@ export default function FaceliftLander() {
         <PressStrip />
         <MeetDoctor />
         <BeforeAfter />
-        <WhyMobley />
-        <Approach />
+        <Procedure />
         <Testimonials />
         <Facility />
         <Faq />

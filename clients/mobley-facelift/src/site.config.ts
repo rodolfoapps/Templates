@@ -133,16 +133,38 @@ export const siteConfig = {
     ],
   },
 
-  approach: {
-    eyebrow: "The Mobley approach",
-    title: "Tighten the muscle, not the skin.",
+  procedure: {
+    eyebrow: "The procedure",
+    title: "The facelift, explained.",
     intro:
-      "A facelift that pulls only the skin tends to look tight and surgical. Dr. Mobley performs a modified deep plane lift. The SMAS muscle layer under the skin is repositioned and tightened, which lifts sagging cheeks and jowls and restores the jawline while the skin itself is laid back down without tension.",
-    points: [
-      { title: "Hidden incisions", text: "Placed in the natural creases in front of and behind the ear and in the hairline. After a few weeks of healing they are very hard to spot." },
-      { title: "Natural movement", text: "Because the lift is in the deeper layer, expressions stay yours. Conservative tightening avoids the “pulled” look." },
-      { title: "A curated plan", text: "A facelift is often combined with a neck lift, 3D neck contouring, eyelid surgery or resurfacing. Dr. Mobley builds one plan around your face and your goals." },
-    ],
+      "A facelift is one of the most rejuvenating procedures in facial plastic surgery. Done well, it does not tighten skin; it repositions the deeper tissue that has dropped with time. Here is what Dr. Mobley does, who it suits, and what the weeks after look like.",
+    candidacy: {
+      title: "Is a facelift right for you?",
+      text: "Most facelift patients come in with changes that skincare and injectables no longer answer. If your cheek fullness has dropped but the lower face is holding, a mid-facelift that repositions the cheek may be the better fit. Only after a full exam can Dr. Mobley tell which is right for you.",
+      signs: ["Sagging cheeks and deepening folds", "Jowls along the jawline", "Loose skin and bands under the chin and neck", "A tired look that rest doesn\u2019t fix"],
+    },
+    technique: {
+      title: "How Dr. Mobley does it",
+      text: "Dr. Mobley performs a modified deep plane lift. The SMAS muscle layer beneath the skin is repositioned and tightened, which lifts the cheeks and jowls and restores the jawline, while the skin is laid back down without tension. That is what keeps the result natural rather than \u201cwindblown.\u201d",
+      points: [
+        { title: "Hidden incisions", text: "In the natural creases in front of and behind the ear and in the hairline. After a few weeks of healing they are very hard to spot." },
+        { title: "Natural movement", text: "Because the lift is in the deeper layer, your expressions stay yours. Conservative tightening avoids the pulled look." },
+        { title: "One curated plan", text: "A facelift is often combined with a neck lift, 3D neck contouring, eyelid surgery or skin resurfacing. Dr. Mobley builds one plan around your face." },
+      ],
+    },
+    timeline: {
+      title: "What to expect",
+      steps: [
+        { label: "Consultation", text: "A full exam and an honest conversation about goals. You leave with a curated plan and a clear quote." },
+        { label: "Surgery day", text: "At Millcreek Surgical Suite, Dr. Mobley\u2019s AAAASF-accredited facility, with anesthesia from Utah specialists." },
+        { label: "Days 1\u20132", text: "A compressive head wrap. Some pressure, very tolerable with the medication every patient receives." },
+        { label: "Week 1", text: "Wrap comes off and most discomfort with it. Tightness under the chin is normal and is a sign the neckline was tightened." },
+        { label: "Weeks 1\u20132", text: "Most patients return to work. Many choose the privacy of the full two weeks." },
+        { label: "A few weeks", text: "Incisions around the ear and hairline are now very hard to spot." },
+      ],
+    },
+    risks: "Every surgery carries risk. Dr. Mobley reviews the common ones, and the less likely ones, with you in person before any plan is made.",
+    risksLink: "See the common risks",
   },
 
   facts: {
